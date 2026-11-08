@@ -14,6 +14,10 @@ BuildRequires:	python
 BuildRequires:	maven
 BuildRequires:	java-current-devel
 BuildRequires:	mvn(javax.ws.rs:javax.ws.rs-api)
+# javax.ws.rs-api depends on jaxb-api. That POM still inherits
+# jaxb-api-parent, which selects javax.activation-api 1.2.0.
+BuildRequires:	mvn(javax.xml.bind:jaxb-api-parent:pom::)
+BuildRequires:	mvn(javax.activation:javax.activation-api)
 BuildRequires:	mvn(org.osgi:org.osgi.util.promise)
 BuildRequires:	mvn(org.osgi:osgi.core)
 BuildRequires:	mvn(org.osgi:osgi.annotation)
